@@ -1,3 +1,5 @@
+<script src="./ckeditor/ckeditor.js"></script>
+
 <?php
     include('nav.php');
     include('./db.php');
@@ -105,3 +107,8 @@ if(isset($_POST['submit'])){
 <hr>
 
 <?php  }?>
+
+<script>
+  CKEDITOR.replace('discuss');
+
+</script>

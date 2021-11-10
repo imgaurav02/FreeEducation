@@ -1,3 +1,5 @@
+<script src="../ckeditor/ckeditor.js"></script>
+
 <?php
     include('../bootstrap.php');
     include('../db.php');
@@ -63,3 +65,9 @@
     </div>
   <button type="submit" name="add" class="btn btn-primary">Add</button>
 </form>
+
+<script>
+  CKEDITOR.replace('question');
+  CKEDITOR.replace('answer');
+
+</script>
