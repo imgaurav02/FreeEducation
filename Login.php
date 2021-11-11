@@ -14,7 +14,6 @@
                 $res = mysqli_query($con,$query);
                 $row = mysqli_num_rows($res);
                 if($row){
-                    session_start();
                     $_SESSION['student'] = $email;
                     header("location: profile.php");
                 }
@@ -45,6 +44,12 @@
                         </div>';   
         }
     }
+?>
+
+<?php
+if(!empty($_SESSION['student'])){
+    header("location: profile.php");
+}   
 ?>
 
 <!DOCTYPE html>

@@ -65,6 +65,12 @@
 
 ?>
 
+<?php
+if(!empty($_SESSION['student'])){
+    header("location: profile.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
