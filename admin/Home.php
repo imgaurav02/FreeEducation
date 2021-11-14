@@ -23,3 +23,10 @@
     <a href="./addques.php" class="btn btn-primary">Click Here</a>
   </div>
 </div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Add Pdf's</h5>
+    <a href="./addpdf.php" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
