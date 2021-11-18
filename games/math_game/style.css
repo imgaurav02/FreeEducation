@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #2b3f4f;
+}
+
+div {
+    user-select: none;
+}
+
+div, input {
+    border-radius: 5px;
+    line-height: 1.5em;
+}
+
+.game {
+    position: absolute;
+    height: 500px;
+    width: 40%;
+    top: 270px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.numbers {
+    width: 100%;
+    display: flex;
+    margin: 10px 0 0;    
+}
+
+h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-block: 0;
+    margin: 0 0 20px 0;
+    color: #1ae5a8;
+    letter-spacing: 3px;
+}
+
+.title_h {
+    display: flex;
+}
+
+.level_h {
+    flex: 1;
+    text-align: center;
+    margin: 30px 0 10px;
+    color: #021827;
+}
+
+.timer {
+    height: 50px;
+    margin: 10px;
+    background: #021827;
+    text-align: center;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    line-height: 1.5em;
+}
+
+.num {
+    flex: 2;
+    height: 50px;
+    margin: 20px 10px 0;
+    background: #55687b;
+    text-align: center;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.operator {
+    flex: 1;
+}
+
+.answer {
+    width: 100%;
+    display: flex;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.answer input{
+    height: 50px;
+    width: 100%;
+    flex: 6;
+    border: none;
+    outline: none;
+    margin: 20px 10px 10px 10px;
+    background: #55687b;
+    -moz-appearance: textfield;
+    text-align: center;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.answer input{
+  cursor: pointer;
+}
+
+.del, .score{
+    flex: 1;
+    height: 50px;
+    margin: 20px 10px 10px 10px;
+    background: #55687b;
+    text-align: center;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: .5s background;
+}
+
+.del:hover {
+    cursor: pointer;
+    background: rgb(202, 49, 22);
+}
+
+.progress {
+    display: flex;
+}
+
+.problem {
+    height: 20px;
+    flex: 1;
+    margin: 10px;
+    background: #55687b;
+    transition: .5s background;
+}
+
+.complete {
+    background: #1ae5a8;
+}
+
+.menu {
+    display: flex;
+}
+
+.m-item {
+    flex: 1;
+    height: 50px;
+    margin: 20px 10px 0;
+    background: #021827;
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+}
+
+.reload img {
+    margin: 7px 0 0;
+    width: 35px;
+    filter: invert(80%);
+    transform: scaleX(-1);
+    transition: .5s filter;
+}
+
+.reload img:hover {
+    filter: invert(95%);
+}
+
+.reload:hover {
+    cursor: pointer;
+}
+
+.start {
+    background: #1ae5a8;
+    color: #021827;
+    transition: .5s background, .5s box-shadow;
+}
+
+.start:hover {
+    background: #6bffda;
+    box-shadow: 0 0 5px 5px #6bffda33;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 1250px) {
+
+.game {
+    width: 60%;
+}
+}
+
+@media (max-width: 950px) {
+
+.game {
+    width: 80%;
+}
+}
+
+@media (max-width: 600px) {
+
+.game {
+    width: 95%;
+}
+}
+
+@media (max-width: 500px) {
+
+div, input {
+    line-height: 1.2em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+.num, .timer, .m-item, .answer input, .del, .score, .start{
+    height: 40px;
+    font-size: 1.5em;
+    line-height: 1.6em;
+    margin: 20px 5px 10px;
+}
+
+.problem {
+    margin: 10px 5px 30px;
+}
+
+.reload img {
+    margin: 5px 0 0;
+    width: 30px;
+}
+
+.level_h {
+    margin: 15px 0 0;
+    font-size: 1.4em;
+}
+
+.numbers {
+    margin: 10px 0 0;
+}
+}
+
+@keyframes focus {
+    100%{
+        background: #637b92;
+    }
+}
