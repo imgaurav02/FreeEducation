@@ -17,8 +17,23 @@
             if($_GET['class'] != NULL and $_GET['subject'] != NULL){
                 $id = $_GET['class'];
                 $subject = $_GET['subject'];
-                $query = "select * from content where class = '$id' and subject = '$subject'";
+                $record = mysqli_num_rows(mysqli_query($con,"select * from content where class = '$id' and subject = '$subject'"));
+                $per_page = 2;
+                $start = 0;
+                if(isset($_GET['start'])){
+                    $start = $_GET['start'];
+                    if($start <= 0)
+                        $start = 0;
+                    else{
+                        $start--;
+                        $start = $start*$per_page;
+
+                    }
+
+                }
+                $query = "select * from content  where class = '$id' and subject = '$subject' limit $start,$per_page";
                 $res = mysqli_query($con,$query);
+                $page = ceil($record/$per_page);
                 while($arr = mysqli_fetch_assoc($res)){
 
     ?>
@@ -44,7 +59,20 @@
         </div>
     </div>
     </div>
-<?php } } else{
+<?php } 
+    ?>
+    <div class="container">
+  <ul class="pagination pagination-sm">
+      <?php for($i = 1;$i<= $page;$i++){ ?>
+    <li class="page-item active"><a href="content.php?class=<?php echo $id; ?>&subject=<?php echo $subject; ?>&start=<?php echo $i;?>"><span class="page-link"><?php echo $i; ?></span></li></a>
+    <?php }?>
+  </ul>
+
+</div>
+
+    <?php
+
+} else{
     echo "Don't Play with URLS";
 }} else{
         echo '<div class="alert alert-danger" role="alert">
@@ -56,5 +84,6 @@
     
     }
 ?>
+
 </body>
 </html>
