@@ -17,7 +17,7 @@
             if($_GET['class'] != NULL and $_GET['subject'] != NULL){
                 $id = $_GET['class'];
                 $subject = $_GET['subject'];
-                $record = mysqli_num_rows(mysqli_query($con,"select * from content where class = '$id' and subject = '$subject'"));
+                $record = mysqli_num_rows(mysqli_query($con,"select * from content where class = '$id' and subject = '$subject'  and isVisible = 1"));
                 $per_page = 2;
                 $start = 0;
                 if(isset($_GET['start'])){
@@ -31,7 +31,7 @@
                     }
 
                 }
-                $query = "select * from content  where class = '$id' and subject = '$subject' limit $start,$per_page";
+                $query = "select * from content  where class = '$id' and subject = '$subject'  and isVisible = 1 limit $start,$per_page";
                 $res = mysqli_query($con,$query);
                 $page = ceil($record/$per_page);
                 while($arr = mysqli_fetch_assoc($res)){

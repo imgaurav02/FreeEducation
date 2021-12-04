@@ -32,6 +32,9 @@
           <a href="http://localhost/freeEducation/logout.php" class="nav-link">Logout</a>
         </li>
       <?php } ?>
+      <li class="nav-item active">
+        <a class="nav-link" href="./games">Games <span class="sr-only">(current)</span></a>
+      </li>
     </ul>
   </div>
 </nav>

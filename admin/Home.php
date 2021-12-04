@@ -30,3 +30,10 @@
     <a href="./addpdf.php" class="btn btn-primary">Click Here</a>
   </div>
 </div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Approve Content</h5>
+    <a href="./approveContent.php" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
