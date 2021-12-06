@@ -7,8 +7,17 @@
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-        $query = "select * from content where id = $id";
+        if($id != NULL){
+        $query = "select * from content where id = $id and isVisible = 1";
         $res = mysqli_query($con,$query);
+        $count = mysqli_num_rows($res);
+        if($count == 0){
+          header("location: index.php");      
+        }
+        }
+        else{
+          header("location: index.php");      
+        }
         while($arr = mysqli_fetch_assoc($res)){
 
 ?>
@@ -90,7 +99,7 @@ if(isset($_POST['submit'])){
 
 
 <?php
-    $query = "select * from comment where quesid=$id";
+    $query = "select * from comment where quesid=$id and isVisible = 1";
     $res = mysqli_query($con,$query);
     while($arr = mysqli_fetch_assoc($res)){
 
