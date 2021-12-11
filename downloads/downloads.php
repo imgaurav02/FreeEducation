@@ -6,7 +6,7 @@
         if($_GET['class'] != "" and $_GET['subject'] != ""){
             $class = $_GET['class'];
             $subject = $_GET['subject'];
-            $query = "select * from pdf where class = '$class' and subject = '$subject'";
+            $query = "select * from pdf where class = '$class' and subject = '$subject' and isVisible = 1";
             $res = mysqli_query($con,$query);
             $count = mysqli_num_rows($res);
             if($count){

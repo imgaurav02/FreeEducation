@@ -52,5 +52,11 @@
     <a href="./approveComent.php" class="btn btn-primary">Click Here</a>
   </div>
 </div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Approve PDF's</h5>
+    <a href="./approvepdf.php" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
 
 <?php } ?>
