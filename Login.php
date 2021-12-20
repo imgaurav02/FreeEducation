@@ -1,6 +1,7 @@
 <?php
     include('db.php');
     include('nav.php');
+
     $err = "";
     if(isset($_POST['login'])){
         if($_POST['email'] != "" and $_POST['password'] != ""){
@@ -19,7 +20,7 @@
                 }
                 else{
                     $err = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <strong>Email or Password incorrect</strong> 
+                                <strong>Phone Number or Password incorrect</strong> 
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
@@ -74,7 +75,7 @@ if(!empty($_SESSION['student'])){
 		<p class="hint-text">Login into your account to access free classes. It's free and only takes a minute.</p>
 
         <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        	<input type="text" class="form-control" name="email" placeholder="Phone" required="required">
         </div>
 		<div class="form-group">
             <input type="password" class="form-control" name="password" placeholder="Password" required="required">

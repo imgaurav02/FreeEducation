@@ -18,7 +18,7 @@
                 $id = $_GET['class'];
                 $subject = $_GET['subject'];
                 $record = mysqli_num_rows(mysqli_query($con,"select * from content where class = '$id' and subject = '$subject'  and isVisible = 1"));
-                $per_page = 2;
+                $per_page = 5;
                 $start = 0;
                 if(isset($_GET['start'])){
                     $start = $_GET['start'];
@@ -37,10 +37,8 @@
                 while($arr = mysqli_fetch_assoc($res)){
 
     ?>
-    <div class="card">
-    <div class="card-header">
-        Featured
-    </div>
+    <div class="card mb-5">
+
     <div class="card-body">
         <h5 class="card-title"><?php echo $arr['subject'] ?></h5>
         <p class="card-text"><?php echo $arr['ques'] ?></p>
@@ -73,13 +71,18 @@
     <?php
 
 } else{
-    echo "Don't Play with URLS";
+    echo '<div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Error</h4>
+        <p>Hey You Do Not Play With URLS</p>
+        <hr>
+        <p>Understand?</p>
+      </div>';
 }} else{
         echo '<div class="alert alert-danger" role="alert">
-        <h4 class="alert-heading">Well done!</h4>
-        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        <h4 class="alert-heading">Error</h4>
+        <p>Hey You Do Not Play With URLS</p>
         <hr>
-        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+        <p>Understand?</p>
       </div>';    
     
     }

@@ -24,7 +24,7 @@
         $res = mysqli_query($con,$query);
         if($res){
             echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Post Approve Successfully</strong>
+            <strong>PDF Approve Successfully</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -45,7 +45,7 @@
         $res = mysqli_query($con,$query);
         if($res){
             echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Post Deleted Successfully</strong>
+            <strong>PDF Deleted Successfully</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -109,7 +109,8 @@
     else{
         echo '<div class="alert alert-success" role="alert">
         <h4 class="alert-heading">Well done!</h4>
-        <p>There Is No Post Available for approval</p>
+        <p>There Is No PDF Available for approval</p>
       </div>';
     }
 ?>
+<a href="index.php" class="btn btn-link">Go back</a>

@@ -19,15 +19,15 @@
     <li class="list-group-item">Available Subjects</li>
 
   <a href="downloads.php?class=<?php echo $id ?>&subject=math"><li class="list-group-item list-group-item-primary">Maths</li></a>
-  <a href="downloads.php?class=<?php echo $id ?>&subject=science""><li class="list-group-item list-group-item-secondary">Science</li></a>
-  <a href="downloads.php?class=<?php echo $id ?>&subject=english""><li class="list-group-item list-group-item-success">English</li></a>
+  <a href="downloads.php?class=<?php echo $id ?>&subject=science"><li class="list-group-item list-group-item-secondary">Science</li></a>
+  <a href="downloads.php?class=<?php echo $id ?>&subject=english"><li class="list-group-item list-group-item-success">English</li></a>
 </ul>
 <?php } else{
         echo '<div class="alert alert-danger" role="alert">
-        <h4 class="alert-heading">Well done!</h4>
-        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        <h4 class="alert-heading">Error</h4>
+        <p>Hey You Do Not Play With URLS</p>
         <hr>
-        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+        <p>Understand?</p>
       </div>';    
     
     }

@@ -1,4 +1,20 @@
 <?php
+    function validate_phone_number($phone)
+    {
+         // Allow +, - and . in phone number
+         $filtered_phone_number = filter_var($phone, FILTER_SANITIZE_NUMBER_INT);
+         // Remove "-" from number
+         $phone_to_check = str_replace("-", "", $filtered_phone_number);
+    
+         // Check the lenght of number
+         // This can be customized if you want phone number from a specific country
+         if (strlen($phone_to_check) < 10 || strlen($phone_to_check) > 14) {
+            return false;
+         } else {
+           return true;
+         }
+    }
+
     include('db.php');
     include('nav.php');
     $err = "";
@@ -9,6 +25,8 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
+        if(validate_phone_number($email) == true){
+
         if($first_name != "" and $last_name != "" and $class != "Select Class" and $email != "" and $password != "" and $confirm_password != ""){
             if($confirm_password == $password){
                 $query = "select * from student where email = '$email'";
@@ -61,6 +79,15 @@
                         </button>
                     </div>';
         }
+        }
+        else{
+            $err = '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Phone Number is invalid</strong> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>';  
+        }
     }
 
 ?>
@@ -108,7 +135,7 @@ if(!empty($_SESSION['student'])){
             </select>
         </div>
         <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        	<input type="text" class="form-control" name="email" placeholder="Phone" required="required">
         </div>
 		<div class="form-group">
             <input type="password" class="form-control" name="password" placeholder="Password" required="required">

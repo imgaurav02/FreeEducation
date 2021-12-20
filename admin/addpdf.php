@@ -1,5 +1,3 @@
-
-
 <?php
     include('../bootstrap.php');
     include('../db.php');
@@ -65,3 +63,5 @@
     </div>
   <button type="submit" name="add" class="btn btn-primary">Add</button>
 </form>
+
+<a href="index.php" class="btn btn-link">Go back</a>

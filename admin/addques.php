@@ -71,3 +71,7 @@
   CKEDITOR.replace('answer');
 
 </script>
+
+<dv class="center">
+<a href="index.php" class="btn btn-link">Go back</a>
+</dv>

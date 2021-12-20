@@ -109,3 +109,4 @@
       </div>';
     }
 ?>
+<a href="index.php" class="btn btn-link">Go back</a>

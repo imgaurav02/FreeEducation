@@ -13,6 +13,10 @@
         $arr = $row;
     }
 
+    $query = "select link from meet where id = 1";
+    $res = mysqli_query($con,$query);
+    $link = mysqli_fetch_array($res);
+
 ?>
 
 
@@ -27,8 +31,8 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Download Pdf</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="./downloads/classes.php" class="btn btn-primary">Go somewhere</a>
+        
+        <a href="./downloads/classes.php" class="btn btn-primary">Click Here</a>
       </div>
     </div>
   </div>
@@ -36,8 +40,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Live Classes</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="<?php echo $link['link'] ?>" target="_blank" class="btn btn-primary">Click Here</a>
       </div>
     </div>
   </div>
@@ -47,8 +50,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Youtube Classes</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="btn btn-primary">Click Here</a>
       </div>
     </div>
 </div>
@@ -56,8 +58,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Games</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="./games" class="btn btn-primary">Go somewhere</a>
+        <a href="./games" class="btn btn-primary">Click Here</a>
       </div>
     </div>
   </div>
