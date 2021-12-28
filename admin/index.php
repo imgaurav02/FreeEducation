@@ -13,9 +13,15 @@
             $password = $_POST['password'];
             $query = "select * from admin where email = '$email' and password = '$password' ";
             $res = mysqli_query($con,$query);
-            if(mysqli_fetch_row($res)){
-                $_SESSION['name']=$email;
-                header("location: Home.php");
+            if(mysqli_num_rows($res) > 0){
+                $arr = mysqli_fetch_array($res);
+                if($arr['isApprove'] == 1){
+                    $_SESSION['name']=$email;
+                    header("location: Home.php");
+                }
+                else{
+                    echo "Account Is Not Approved Ask Admin to Approve Your Account";
+                }
             }
             else{
                 echo "email or password is incorrect";
