@@ -70,5 +70,11 @@
     <a href="./approve_teacher.php" class="btn btn-primary">Click Here</a>
   </div>
 </div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Registered Students</h5>
+    <a href="./Registered_students.php" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
 
 <?php } ?>
