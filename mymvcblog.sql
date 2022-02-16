@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2021 at 09:59 AM
+-- Generation Time: Feb 07, 2022 at 09:45 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.4.21
 
@@ -32,16 +32,17 @@ CREATE TABLE `admin` (
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `adminType` int(11) NOT NULL DEFAULT 0
+  `adminType` int(11) NOT NULL DEFAULT 0,
+  `isApprove` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `email`, `password`, `adminType`) VALUES
-(1, 'Gaurav Singh', 'huterabh1@gmail.com', '123', 1),
-(2, 'Aman Singh', 'aman@gmail.com', '123', 0);
+INSERT INTO `admin` (`id`, `username`, `email`, `password`, `adminType`, `isApprove`) VALUES
+(1, 'Gaurav Singh', 'huterabh1@gmail.com', '123', 1, 1),
+(2, 'Aman Singh', 'aman@gmail.com', '123', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -69,7 +70,8 @@ INSERT INTO `comment` (`id`, `quesid`, `name`, `email`, `comment`, `isVisible`) 
 (6, 1, 'Richa Srivastava', 'imgaurave02@gmail.com', '<p>Hello How Are You&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>I am Gaurav</p>\r\n', 1),
 (7, 2, 'Riturendra', 'imgaurave02@gmail.com', '<h2>Where does it come from?</h2>\r\n\r\n<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.</p>\r\n\r\n<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from &quot;de Finibus Bonorum et Malorum&quot; by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>\r\n', 1),
 (8, 1, 'Sushant Baghel', 'pkfamily.events@gmail.com', '<p>Hello</p>\r\n', 1),
-(10, 1, 'Richa Srivastava', 'imgaurave02@gmail.com', '<p>dfxgdfg</p>\r\n', 0);
+(10, 1, 'Richa Srivastava', 'imgaurave02@gmail.com', '<p>dfxgdfg</p>\r\n', 0),
+(11, 1, 'Richa Srivastava', 'imgaurave02@gmail.com', '<p>Hello</p>\r\n', 0);
 
 -- --------------------------------------------------------
 
@@ -131,13 +133,6 @@ CREATE TABLE `pdf` (
   `isVisible` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `pdf`
---
-
-INSERT INTO `pdf` (`id`, `name`, `link`, `class`, `subject`, `isVisible`) VALUES
-(1, 'Gaurav Resume', 'https://drive.google.com/file/d/12lisrDZ7_kAQKsHYK1dWGzZWm3YocnpQ/view?usp=sharing', 3, 'math', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -158,7 +153,9 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`id`, `first_name`, `last_name`, `email`, `class`, `password`) VALUES
-(9, 'Gaurav', 'Singh', '7007429638', 3, '123');
+(9, 'Gaurav', 'Singh', '7007429638', 3, '123'),
+(10, 'Richa', 'Srivastava', '8081139034', 3, '123'),
+(11, 'Aman', 'Srivastava', '7052818352', 5, '123');
 
 --
 -- Indexes for dumped tables
@@ -208,13 +205,13 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `content`
@@ -238,7 +235,7 @@ ALTER TABLE `pdf`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
